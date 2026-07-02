@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brandt & Söhne — Handwerksbetrieb</title>
+<meta name="description" content="Brandt & Söhne — Ihr Meisterbetrieb für Renovierung, Sanitär und Elektro. Zuverlässig, termintreu, aus einer Hand.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#12233b;
+    --navy-2:#1c3453;
+    --orange:#e8632c;
+    --orange-dark:#c94f1f;
+    --steel:#5a6b80;
+    --bg:#f5f6f8;
+    --text:#152030;
+    --muted:#5a6472;
+    --radius:10px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+  h1,h2,h3{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.5px;}
+  a{color:inherit;text-decoration:none;}
+  .container{max-width:1140px;margin:0 auto;padding:0 24px;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--orange);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;}
+  .eyebrow::before{content:"";width:24px;height:3px;background:var(--orange);display:inline-block;}
+
+  header{position:sticky;top:0;z-index:50;background:var(--navy);box-shadow:0 2px 12px rgba(0,0,0,0.15);}
+  .top-bar{background:var(--navy-2);color:#cfd8e3;font-size:13px;padding:8px 0;}
+  .top-bar .container{display:flex;justify-content:space-between;}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;}
+  .logo{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:1px;}
+  .logo span{color:var(--orange);}
+  .nav-links{display:flex;gap:32px;font-size:15px;font-weight:500;color:#cfd8e3;}
+  .nav-links a:hover{color:var(--orange);}
+  .btn{
+    display:inline-block;padding:14px 30px;border-radius:6px;background:var(--orange);color:#fff;
+    font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:0.5px;transition:background .2s;
+  }
+  .btn:hover{background:var(--orange-dark);}
+  .btn-outline{background:transparent;border:2px solid #fff;color:#fff;}
+  .btn-outline:hover{background:#fff;color:var(--navy);}
+
+  .hero{
+    background:linear-gradient(135deg,var(--navy) 0%, var(--navy-2) 60%);
+    color:#fff;padding:90px 0 100px;position:relative;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-100px;top:-100px;width:500px;height:500px;
+    background:radial-gradient(circle,rgba(232,99,44,0.25),transparent 70%);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:50px;align-items:center;position:relative;}
+  .hero h1{font-size:58px;line-height:1.05;margin-bottom:22px;}
+  .hero p{color:#c4cedb;font-size:17px;max-width:480px;margin-bottom:34px;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+  .hero-badges{display:flex;gap:24px;margin-top:40px;flex-wrap:wrap;}
+  .hero-badges div{font-size:13px;color:#c4cedb;display:flex;align-items:center;gap:8px;}
+  .hero-visual{
+    aspect-ratio:1/1;border-radius:16px;background:linear-gradient(160deg,var(--steel),var(--navy-2));
+    position:relative;box-shadow:0 30px 60px -20px rgba(0,0,0,0.5);
+  }
+  .hero-visual::before{content:"🔧";position:absolute;font-size:150px;opacity:0.25;right:10px;bottom:0;}
+  .hero-visual .stat-card{
+    position:absolute;bottom:24px;left:24px;background:#fff;color:var(--navy);
+    padding:16px 20px;border-radius:12px;box-shadow:0 15px 30px rgba(0,0,0,0.25);
+  }
+  .stat-card b{font-family:'Barlow Condensed',sans-serif;font-size:28px;display:block;color:var(--orange);}
+  .stat-card span{font-size:12px;color:var(--muted);}
+
+  section{padding:90px 0;}
+  .section-head{max-width:600px;margin-bottom:50px;}
+  .section-head.center{text-align:center;margin-left:auto;margin-right:auto;}
+  .section-head h2{font-size:38px;}
+  .section-head p{color:var(--muted);margin-top:12px;font-size:15px;}
+
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .service-card{
+    background:#fff;border-radius:var(--radius);padding:32px 26px;border-top:4px solid var(--orange);
+    box-shadow:0 10px 24px -15px rgba(18,35,59,0.2);transition:transform .2s;
+  }
+  .service-card:hover{transform:translateY(-6px);}
+  .service-card .icon{font-size:32px;margin-bottom:16px;}
+  .service-card h3{font-size:21px;margin-bottom:8px;text-transform:none;}
+  .service-card p{color:var(--muted);font-size:14px;}
+
+  .why{background:var(--navy);color:#fff;}
+  .why .section-head p{color:#c4cedb;}
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;}
+  .why-card{text-align:center;}
+  .why-card .num{
+    width:56px;height:56px;border-radius:50%;background:rgba(232,99,44,0.15);color:var(--orange);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;
+  }
+  .why-card h3{font-size:18px;margin-bottom:8px;text-transform:none;}
+  .why-card p{color:#c4cedb;font-size:13px;}
+
+  .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .projects div{
+    aspect-ratio:4/3;border-radius:var(--radius);display:flex;align-items:end;padding:20px;
+    font-weight:600;color:#fff;font-size:14px;
+  }
+  .pr1{background:linear-gradient(160deg,var(--steel),var(--navy));}
+  .pr2{background:linear-gradient(160deg,var(--orange),var(--orange-dark));}
+  .pr3{background:linear-gradient(160deg,#2a4363,var(--navy));}
+
+  .testimonial{background:#fff;text-align:center;}
+  .testimonial blockquote{font-size:24px;max-width:680px;margin:0 auto 20px;font-weight:500;color:var(--navy);}
+  .stars{color:var(--orange);font-size:18px;margin-bottom:16px;}
+  .who{color:var(--muted);font-size:14px;}
+
+  .contact{background:var(--bg);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  .info-card{background:#fff;border-radius:var(--radius);padding:26px;margin-bottom:16px;box-shadow:0 10px 24px -15px rgba(18,35,59,0.15);}
+  .info-card h3{font-size:16px;text-transform:none;margin-bottom:6px;font-weight:700;font-family:'Inter',sans-serif;}
+  .info-card p{color:var(--muted);font-size:14px;}
+  .cta-box{background:var(--navy);color:#fff;border-radius:var(--radius);padding:36px;}
+  .cta-box h3{font-size:24px;margin-bottom:12px;}
+  .cta-box p{color:#c4cedb;font-size:14px;margin-bottom:22px;}
+
+  footer{background:var(--navy);color:#8fa0b8;padding:36px 0;text-align:center;font-size:13px;border-top:1px solid rgba(255,255,255,0.08);}
+  footer .made{margin-top:8px;opacity:0.6;font-size:11px;}
+
+  @media(max-width:860px){
+    .nav-links{display:none;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:38px;}
+    .services-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+    .projects{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Notdienst: 0170 123 45 67</span>
+      <span>Mo–Fr 7:00–17:00 Uhr</span>
+    </div>
+  </div>
+  <nav class="container">
+    <div class="logo">Brandt <span>&amp; Söhne</span></div>
+    <div class="nav-links">
+      <a href="#services">Leistungen</a>
+      <a href="#projects">Projekte</a>
+      <a href="#why">Warum wir</a>
+      <a href="#contact">Kontakt</a>
+    </div>
+    <a href="#contact" class="btn">Angebot anfragen</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Meisterbetrieb seit 1994</span>
+      <h1>Handwerk, auf das<br>Sie sich verlassen können.</h1>
+      <p>Von der Renovierung bis zur Komplettsanierung — wir liefern saubere Arbeit, faire Preise und halten Termine ein.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn">Kostenlos anfragen</a>
+        <a href="#projects" class="btn btn-outline">Projekte ansehen</a>
+      </div>
+      <div class="hero-badges">
+        <div>✅ Festpreisgarantie</div>
+        <div>✅ Meisterbetrieb</div>
+        <div>✅ 25+ Jahre Erfahrung</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="stat-card"><b>500+</b><span>abgeschlossene Projekte</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Leistungen</span>
+      <h2>Alles aus einer Hand</h2>
+      <p>Ein erfahrenes Team für jedes Gewerk — koordiniert, zuverlässig, ohne böse Überraschungen.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><div class="icon">🔨</div><h3>Renovierung</h3><p>Vom Badezimmer bis zur Komplettsanierung.</p></div>
+      <div class="service-card"><div class="icon">🚿</div><h3>Sanitär</h3><p>Installation, Reparatur, Notdienst rund um die Uhr.</p></div>
+      <div class="service-card"><div class="icon">💡</div><h3>Elektro</h3><p>Von der Steckdose bis zur Smart-Home-Verkabelung.</p></div>
+      <div class="service-card"><div class="icon">🎨</div><h3>Malerarbeiten</h3><p>Innen und außen, sauber und termingerecht.</p></div>
+      <div class="service-card"><div class="icon">🪵</div><h3>Bodenverlegung</h3><p>Parkett, Fliesen und Laminat fachgerecht verlegt.</p></div>
+      <div class="service-card"><div class="icon">🏠</div><h3>Dach &amp; Fassade</h3><p>Instandhaltung und energetische Sanierung.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Warum Brandt &amp; Söhne</span>
+      <h2>Vertrauen, das man spürt</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="num">01</div><h3>Festpreis</h3><p>Keine versteckten Kosten, garantiert.</p></div>
+      <div class="why-card"><div class="num">02</div><h3>Termintreue</h3><p>Wir halten, was wir versprechen.</p></div>
+      <div class="why-card"><div class="num">03</div><h3>Meisterqualität</h3><p>Geprüfte Handwerksmeister im Team.</p></div>
+      <div class="why-card"><div class="num">04</div><h3>Garantie</h3><p>5 Jahre Gewährleistung auf alle Arbeiten.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Referenzen</span>
+      <h2>Ausgewählte Projekte</h2>
+    </div>
+    <div class="projects">
+      <div class="pr1">Badsanierung, Köln</div>
+      <div class="pr2">Dachausbau, Bonn</div>
+      <div class="pr3">Küchenrenovierung, Köln</div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonial">
+  <div class="container">
+    <div class="stars">★★★★★</div>
+    <blockquote>„Pünktlich, sauber, professionell — genau das, was man sich von einem Handwerksbetrieb wünscht.“</blockquote>
+    <div class="who">Familie Weber, Köln</div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <div class="info-card">
+        <h3>📍 Adresse</h3>
+        <p>Industriestraße 8, 50667 Köln</p>
+      </div>
+      <div class="info-card">
+        <h3>📞 Kontakt</h3>
+        <p>0221 456 789 · info@brandt-soehne.de</p>
+      </div>
+      <div class="info-card">
+        <h3>🕐 Erreichbarkeit</h3>
+        <p>Mo–Fr 7:00–17:00 Uhr · Notdienst 24/7</p>
+      </div>
+    </div>
+    <div class="cta-box">
+      <h3>Kostenloses Angebot anfordern</h3>
+      <p>Beschreiben Sie kurz Ihr Projekt — wir melden uns innerhalb von 24 Stunden mit einem unverbindlichen Angebot.</p>
+      <a href="#" class="btn">Jetzt anfragen</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>Brandt &amp; Söhne — Handwerksbetrieb</div>
+    <div class="made">Beispiel-Webseite · gestaltet als Portfolio-Vorlage</div>
+  </div>
+</footer>
+
+</body>
+</html>
